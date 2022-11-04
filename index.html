@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Todo app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="background-image">
+    <img class="dark-img" src="./images/bg-desktop-dark.jpg" alt="bg-desktop-dark">
+    <img class="light-img hidden" src="./images/bg-desktop-light.jpg" alt="bg-desktop-light">
+  </div>
+  <div class="container">
+    <div class="header">
+      <div class="title">TODO</div>
+      <div class="theme">
+        <img data-theme="light" class="light" src="./images/icon-sun.svg" alt="icon-sun" onclick="lightMode()">
+        <img data-theme="dark" class="dark hidden" src="./images/icon-moon.svg" alt="icon-moon" onclick="darkMode()">
+      </div>
+    </div>
+    <div class="new-todo">
+      <div class="check">
+        <div class="check-mark"></div>
+      </div>
+      <div class="new-todo-input">
+        <form onsubmit="addItem(event)">
+          <input id="todo-input" type="text" placeholder="Create a new todo...">
+        </form>
+      </div>
+    </div>
+    <div class="todo-items-wrapper">
+      <div class="todo-items">
+        <div class="todo-item">
+          <div class="check-and-text">
+            <div class="check">
+              <div class="check-mark">
+                <img src="./images/icon-check.svg" alt="icon-check">
+              </div>
+            </div>
+            <div class="todo-text">
+              Cut the lawn
+            </div>
+          </div>
+          <div class="todo-delete">
+            <img src="./images/icon-cross.svg" alt="cross">
+          </div>
+        </div>
+        <div class="todo-item">
+          <div class="check">
+            <div class="check-mark">
+              <img src="./images/icon-check.svg" alt="icon-check">
+            </div>
+          </div>
+          <div class="todo-text">
+            Cut the lawn
+          </div>
+        </div>
+        <div class="todo-item">
+          <div class="check">
+            <div class="check-mark">
+              <img src="./images/icon-check.svg" alt="icon-check">
+            </div>
+          </div>
+          <div class="todo-text">
+            Cut the lawn
+          </div>
+        </div>
+      </div>
+      <div class="todo-items-info">
+        <div class="items-left">
+          5 items left
+        </div>
+        <div class="items-status">
+          <span class="all-btn active">All</span>
+          <span class="active-btn">Active</span>
+          <span class="completed-btn">Completed</span>
+        </div>
+        <div class="items-clear">
+          <span class="clear-completed-btn">Clear Completed</span>
+        </div>
+      </div>
+    </div>
+    <div class="items-status-mobile dark-mode-background ">
+      <span class="all-btn-mobile active">All</span>
+      <span class="active-btn-mobile">Active</span>
+      <span class="completed-btn-mobile">Completed</span>
+    </div>
+    <div class="drag-and-drop-text todo-items-info">
+      Drag and drop to reorder list
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="firebase.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
